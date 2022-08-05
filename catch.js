@@ -2,6 +2,7 @@ function a(number) {
   return new Promise((resolve, reject) => {
     if (number > 4) {
       reject();
+      return;
     }
     setTimeout(() => {
       console.log("a");
@@ -11,7 +12,7 @@ function a(number) {
 }
 
 function test() {
-  a(2)
+  a(7)
     .then(() => {
       console.log("Resolve!");
     })
