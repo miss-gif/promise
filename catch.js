@@ -11,14 +11,28 @@ function a(number) {
   });
 }
 
-function test() {
-  a(7)
-    .then(() => {
-      console.log("Resolve!");
-    })
-    .catch(() => {
-      console.log("Reject");
-    });
+// function test() {
+//   a(1)
+//     .then(() => {
+//       console.log("Resolve!");
+//     })
+//     .catch(() => {
+//       console.log("Reject");
+//     })
+//     .finally(function () {
+//       console.log("Done!");
+//     });
+// }
+
+async function test() {
+  try {
+    await a(8);
+    console.log("Resolve!");
+  } catch (error) {
+    console.log("Reject!");
+  } finally {
+    console.log("Done!");
+  }
 }
 
 test();
